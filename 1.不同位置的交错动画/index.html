@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不通位置的加错动画</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="reveal">I am Iron Man</div>
+  
+  <script>
+   let duration = 0.8
+   let delay = 0.3
+   let revealText = document.querySelector('.reveal')
+   let letters = revealText.textContent.split('')
+   revealText.textContent = ''
+   let middle = letters.filter(e => e !== '').length / 2
+
+   letters.forEach((letter, index) => {
+     let span = document.createElement('span')
+     span.textContent = letter
+     span.style.animationDelay = `${delay + Math.abs(index - middle) * 0.1}s`
+     revealText.append(span)
+   })
+  </script>
+
+  <script>
+    // 下雪效果
+    // const snowInnerHtml = new Array(200).fill(1).reduce((acc, curr) => {
+    //   acc = `${acc}
+    //     <div class="snow"></div>
+    //   `
+    //   return acc
+    // }, '')
+
+    // document.body.innerHTML = document.body.innerHTML + snowInnerHtml
+  </script>
+</body>
+</html>

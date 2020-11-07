@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS分割文本</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <p class="land-in">如果能在每个黄昏睡醒后，吃到一堆自己喜欢的东西就好了，看着逐渐被黑暗统治的世界，咬下一口炸鸡，喝一口啤酒，胃被塞得满满的，哪里会感到孤独。如果这些都不可以，只要，能见到你就好了</p>
+
+  <script>
+    const landIntexts = document.querySelectorAll('.land-in')
+    landIntexts.forEach(text => {
+      const letters = text.textContent.split('')
+      text.textContent = ''
+      letters.forEach((letter, index) => {
+        let span = document.createElement('span')
+        span.textContent = letter
+        span.style.animationDelay = `${index * 0.05}s`
+        text.append(span)
+      })
+    })
+  </script>
+</body>
+</html>

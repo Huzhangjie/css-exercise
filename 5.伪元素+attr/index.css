@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background: #1A1E23;
+}
+
+.float-text-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+.float-text-menu li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px;
+  color: white;
+  font-family: Lato, sans-serif;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.float-text-menu li a span {
+  position: relative;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.float-text-menu li a span::before {
+  position: absolute;
+  content: attr(data-text);
+  -webkit-transform: translateY(130%);
+          transform: translateY(130%);
+}
+
+.float-text-menu li a:hover span {
+  -webkit-transform: translateY(-130%);
+          transform: translateY(-130%);
+}
+/*# sourceMappingURL=index.css.map */

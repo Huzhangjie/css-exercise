@@ -1,0 +1,43 @@
+<!--
+ * @Author: HuZhangjie
+ * @Date: 2020-11-07 14:07:51
+ * @LastEditors: HuZhangjie
+ * @LastEditTime: 2020-11-07 14:48:29
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.伪元素+attr</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <ul class="float-text-menu">
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">Vue.js</a></li>
+      <li><a href="#">React.js</a></li>
+      <li><a href="#">Css</a></li>
+      <li><a href="#">Html</a></li>
+    </ul>
+
+    <script>
+      let floatTextMenuLinks = document.querySelectorAll(".float-text-menu a");
+      floatTextMenuLinks.forEach((link) => {
+        console.log("link", link.dataset);
+        let letters = link.textContent.split("");
+        link.textContent = "";
+
+        letters.forEach((letter, i) => {
+          let span = document.createElement("span");
+          span.textContent = letter;
+          span.style.transitionDelay = `${i / 20}s`;
+          span.dataset.text = letter;
+
+          link.append(span);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -14,6 +14,11 @@ body {
   background: #1A1E23;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body .btn {
   --hue: 190;
   --ease-in-duration: 0.25s;
@@ -203,5 +208,127 @@ body .btn-text-float-up:hover::after {
           transform: translateY(0);
   -webkit-transition: 0.75s 0.1s var(--ease-out-exponential);
   transition: 0.75s 0.1s var(--ease-out-exponential);
+}
+
+body .btn-multiple-border-stroke {
+  margin-left: 20px;
+  border-color: transparent;
+}
+
+body .btn-multiple-border-stroke .btn-borders-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid hsla(var(--hue), 100%, 41%, 0.35);
+}
+
+body .btn-multiple-border-stroke .btn-borders-group:nth-child(1) {
+  left: -8px;
+  padding: 0 8px;
+}
+
+body .btn-multiple-border-stroke .btn-borders-group:nth-child(2) {
+  top: -8px;
+  padding: 8px 0;
+}
+
+body .btn-multiple-border-stroke .btn-borders-group:nth-child(3) {
+  top: -4px;
+  left: -4px;
+  padding: 4px;
+}
+
+body .btn-multiple-border-stroke .btn-borders-group .border-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: hsl(var(--hue), 100%, 41%);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+body .btn-multiple-border-stroke .btn-borders-group .border-right {
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: hsl(var(--hue), 100%, 41%);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+body .btn-multiple-border-stroke .btn-borders-group .border-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: hsl(var(--hue), 100%, 41%);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+body .btn-multiple-border-stroke .btn-borders-group .border-left {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: hsl(var(--hue), 100%, 41%);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+body .btn-multiple-border-stroke .btn-borders-group .border-left, body .btn-multiple-border-stroke .btn-borders-group .border-bottom {
+  -webkit-transition: var(--ease-out-duration) var(--ease-out-delay) cubic-bezier(0.2, 1, 0.2, 1);
+  transition: var(--ease-out-duration) var(--ease-out-delay) cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+body .btn-multiple-border-stroke .btn-borders-group .border-right, body .btn-multiple-border-stroke .btn-borders-group .border-top {
+  -webkit-transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+  transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+}
+
+body .btn-multiple-border-stroke:hover {
+  color: hsl(var(--hue), 100%, 41%);
+  background: transparent;
+}
+
+body .btn-multiple-border-stroke:hover .border-top, body .btn-multiple-border-stroke:hover .border-bottom {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+body .btn-multiple-border-stroke:hover .border-left, body .btn-multiple-border-stroke:hover .border-right {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+body .btn-multiple-border-stroke:hover .border-left, body .btn-multiple-border-stroke:hover .border-bottom {
+  -webkit-transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+  transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+}
+
+body .btn-multiple-border-stroke:hover .border-right, body .btn-multiple-border-stroke:hover .border-top {
+  -webkit-transition: var(--ease-out-duration) var(--ease-out-delay) cubic-bezier(0.2, 1, 0.2, 1);
+  transition: var(--ease-out-duration) var(--ease-out-delay) cubic-bezier(0.2, 1, 0.2, 1);
 }
 /*# sourceMappingURL=index.css.map */

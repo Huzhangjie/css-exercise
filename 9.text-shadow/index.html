@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text-shadow</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <h1 class="glow-in">Hello World</h1>
+    <p class="glow-in">
+      假如你在下午四点来，那么从三点起我就开始感到幸福，时间越临近我就越幸福。
+    </p>
+
+    <ul class="link">
+      <li><a href="./index.html">文本光影</a></li>
+      <li><a href="./neon.html">霓虹</a></li>
+      <li><a href="./3D-Loading.html">3D-Loading</a></li>
+    </ul>
+
+    <script>
+      const glowInTexts = document.querySelectorAll(".glow-in");
+
+      glowInTexts.forEach((glowInTextEle) => {
+        const letters = glowInTextEle.textContent.split("");
+        glowInTextEle.textContent = "";
+        letters.forEach((letter, index) => {
+          const span = document.createElement("span");
+          span.textContent = letter;
+          span.style.animationDelay = `${index * 0.05}s`;
+
+          glowInTextEle.append(span)
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -93,6 +93,7 @@ body {
     // 0 100px 80px rgba(0, 0, 0, 0.07);
     animation: show-modal 0.5s ease forwards;
 
+    // 是在任何处于全屏模式的元素下的即刻渲染的盒子（并且在所有其他在堆中的层级更低的元素之上
     &::backdrop {
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(3px);

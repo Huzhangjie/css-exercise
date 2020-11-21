@@ -1,0 +1,39 @@
+@import "../base.scss";
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+@font-face {
+  font-family: Biko;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/biko-black.woff");
+}
+
+body {
+  overflow: hidden;
+
+  video, h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  video {
+    // 一般用于 img 和 video 标签，一般可以对这些元素进行保留原始比例的剪切、缩放或者直接进行拉伸等。
+    // 可以通过使用 object-position 属性来切换被替换元素的内容对象在元素框内的对齐方式。
+    object-fit: cover;
+  }
+
+  h1 {
+    font-size: 12vw;
+    font-family: Biko, sans-serif;
+    font-weight: 700;
+    line-height: 100vh;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+    opacity: .2;
+    // 元素的内容应该与元素的直系父元素的内容和元素的背景如何混合
+    mix-blend-mode: screen;
+  }
+}

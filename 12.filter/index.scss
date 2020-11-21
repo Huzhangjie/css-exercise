@@ -1,0 +1,57 @@
+@import "../base.scss";
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+body {
+  // text-align: center;
+  .card {
+    $snow-size: 3em;
+    width: $snow-size * 10;
+    height: $snow-size * 10;
+    padding: 10em;
+    display: flex;
+    flex-wrap: wrap;
+    background: black;
+    // blue：给图像设置高斯模糊。"radius"一值设定高斯函数的标准差，或者是屏幕上以多少像素融在一起， 所以值越大越模糊；
+    // contrast：调整图像的对比度。值是0%的话，图像会全黑。值是100%，图像不变。值可以超过100%，意味着会运用更低的对比。若没有设置值，默认是1。
+    filter: blur(15px) contrast(30);
+
+    .snow {
+      position: relative;
+      width: $snow-size;
+      height: $snow-size;
+      border-radius: 100%;
+
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        width: inherit;
+        height: inherit;
+        background: white;
+        // 一种奇怪的颜色
+        // background: wheat;
+        transition: 15s ;
+      }
+
+      &:hover::after {
+        transform: scale(0);
+        transition-duration: .3s;
+      }
+    }
+  }
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-family: Lato, sans-serif;
+    font-size: 4em;
+    line-height: 1em;
+    letter-spacing: 0.1em;
+    transform: translate(-50%, -160%);
+    pointer-events: none;
+    z-index: 99;
+    filter: blur(1px) contrast(20);
+  }
+}

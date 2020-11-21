@@ -90,7 +90,7 @@ body {
     &-danger {
       --gauge-circle-color: var(--danger-color);
       --gauge-circle-color-lighter: var(--danger-color-lighter);
-  }
+    }
     &::before {
       position: absolute;
       content: counter(value);
